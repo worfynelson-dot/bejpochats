@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a192f;
+  --foreground: #e6f1ff;
+  --blue-primary: #3b82f6;
+}
+
+body {
+  color: var(--foreground);
+  background: radial-gradient(circle at center, #112240 0%, #0a192f 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar for Chat Window */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(16, 42, 73, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+
+/* Animation for new messages */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message-appear {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(23, 42, 69, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
